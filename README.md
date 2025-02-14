@@ -21,7 +21,7 @@ pnpm i autohue.js
 ```js
 import autohue from 'autohue.js'
 
-autoColorPicker(url, {
+autohue(url, {
   threshold: {
     primary: 10,
     left: 1,
