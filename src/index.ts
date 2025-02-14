@@ -1,4 +1,4 @@
-export interface AutoColorResult {
+export interface AutoHueResult {
   primaryColor: string // 占比最大的颜色
   secondaryColor: string // 第二大颜色
   backgroundColor: {
@@ -171,7 +171,7 @@ function clusterPixelsByCondition(imageData: ImageData, condition: (x: number, y
   }
   return clusters
 }
-function __handleAutoColorPickerOptions(options?: autoColorPickerOptions) {
+function __handleAutoHueOptions(options?: autoColorPickerOptions) {
   if (!options) options = {} as autoColorPickerOptions
   const { maxSize = 100 } = options
   let threshold = options.threshold || 10
@@ -194,8 +194,8 @@ function __handleAutoColorPickerOptions(options?: autoColorPickerOptions) {
  * @param imageSource 图片 URL 或 HTMLImageElement
  * @returns 返回包含主要颜色、次要颜色和背景色对象（上、右、下、左）的结果
  */
-export default async function autoColorPicker(imageSource: HTMLImageElement | string, options?: autoColorPickerOptions): Promise<AutoColorResult> {
-  const { maxSize, threshold } = __handleAutoColorPickerOptions(options)
+export default async function colorPicker(imageSource: HTMLImageElement | string, options?: autoColorPickerOptions): Promise<AutoHueResult> {
+  const { maxSize, threshold } = __handleAutoHueOptions(options)
   const img = await loadImage(imageSource)
   // 降采样（最大尺寸 100px，可根据需求调整）
   const imageData = getImageDataFromImage(img, maxSize)

@@ -1,21 +1,21 @@
 {
-  "name": "autotint.js",
+  "name": "autohue.js",
   "version": "1.0.0",
   "description": "一个自动提取图片主题色让图片和背景融为一体的工具",
-  "main": "./dist/autotint.cjs.js",
+  "main": "./dist/autohue.cjs.js",
   "type": "module",
   "types": "./dist/types/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/auto-plugin/autotint.js.git"
+    "url": "https://github.com/auto-plugin/autohue.js.git"
   },
   "files": [
     "dist/*",
-    "autotint.svg",
+    "autohue.svg",
     "LICENSE",
     "README.md"
   ],
-  "homepage": "https://auto-plugin.github.io/index/autotint.js/",
+  "homepage": "https://auto-plugin.github.io/index/autohue.js/",
   "scripts": {
     "dev": "rolldown -c ./rolldown.config.dev.ts --watch",
     "vnr": "vnr",
@@ -23,7 +23,7 @@
   },
   "keywords": [
     "toast",
-    "autotint.js"
+    "autohue.js"
   ],
   "devDependencies": {
     "@types/node": "^20.2.1",

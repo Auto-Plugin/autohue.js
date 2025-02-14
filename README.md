@@ -1,11 +1,11 @@
 <p align="center">
   <a target="_blank" href="#">
-  <img alt="autotint" src="https://auto-plugin.github.io/index/dependens/ico.svg" width="300">
+  <img alt="autohue" src="https://auto-plugin.github.io/index/dependens/ico.svg" width="300">
   </a>
 </p>
 
 <p align="center">
-  <h2 align="center">autotint.js</h2>
+  <h2 align="center">autohue.js</h2>
 </p>
 
 一个自动提取图片主题色让图片和背景融为一体的工具
@@ -13,13 +13,13 @@
 ## 安装
 
 ```shell
-pnpm i autotint.js
+pnpm i autohue.js
 ```
 
 ## 使用
 
 ```js
-import autotint from 'autotint.js'
+import autohue from 'autohue.js'
 
 autoColorPicker(url, {
   threshold: {

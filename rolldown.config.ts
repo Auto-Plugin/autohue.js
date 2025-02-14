@@ -18,29 +18,29 @@ export default defineConfig({
   output: [
     {
       format: 'esm',
-      file: './dist/autotint.esm.js',
-      name: 'autotint',
+      file: './dist/autohue.esm.js',
+      name: 'autohue',
       esModule: true
     },
     {
       format: 'cjs',
-      file: './dist/autotint.cjs.js',
+      file: './dist/autohue.cjs.js',
       esModule: true,
-      name: 'autotint',
+      name: 'autohue',
     },
     {
       format: 'umd',
-      file: './dist/autotint.umd.js',
-      name: 'autotint',
+      file: './dist/autohue.umd.js',
+      name: 'autohue',
     },
     {
       format: 'iife',
-      file: './dist/autotint.iife.js',
-      name: 'autotint',
+      file: './dist/autohue.iife.js',
+      name: 'autohue',
     },
     {
       format: 'iife',
-      file: './dist/autotint.min.js',
+      file: './dist/autohue.min.js',
       plugins: [terser() as Plugin],
     },
   ],

@@ -12,8 +12,8 @@ export default defineConfig({
   output: [
     {
       format: 'iife',
-      file: './dev/autotint.iife.js',
-      name: 'autotint',
+      file: './dev/autohue.iife.js',
+      name: 'autohue',
     },
   ],
   plugins: [
