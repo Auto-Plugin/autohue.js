@@ -1,5 +1,4 @@
 import autohue from '../src/index';
-console.log('autohue::: ', autohue);
 autohue("https://cdn.pixabay.com/photo/2025/01/09/17/48/boat-9322331_640.jpg", {
   maxSize: 100,
   threshold: 1,

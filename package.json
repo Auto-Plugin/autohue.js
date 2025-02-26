@@ -1,6 +1,6 @@
 {
   "name": "autohue.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个自动提取图片主题色让图片和背景融为一体的工具",
   "main": "./dist/autohue.cjs.js",
   "type": "module",
@@ -22,7 +22,10 @@
     "build": "tsc --emitDeclarationOnly && rolldown -c ./rolldown.config.ts"
   },
   "keywords": [
-    "toast",
+    "color-thief",
+    "fast-average-color",
+    "image-color",
+    "color-picker",
     "autohue.js"
   ],
   "devDependencies": {

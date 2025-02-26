@@ -29,6 +29,7 @@ interface autoColorPickerOptions {
    * - 低于此值的颜色归为同一簇，建议 8~12
    * - 值越大，颜色越容易被合并，提取的颜色越少
    * - 值越小，颜色越容易被区分，提取的颜色越多
+   * - 传入 number | { primary?: number; left?: number; right?: number; top?: number; bottom?: number }
    **/
   threshold?: number | thresholdObj
 }

@@ -40,3 +40,8 @@ autohue(url, {
   })
   .catch((err) => console.error(err))
 ```
+
+参数说明：
+
+- threshold：簇阈值，即取均色时的范围大小，一般在 8-12 左右，推荐默认 10 即可，当需要取精准边缘颜色时，可以单独设置 left \ right 等 为 1，支持两种格式：number |  { primary?: number; left?: number; right?: number; top?: number; bottom?: number }
+- maxSize：降采样后的图片大小，如传入 100，图片将被压缩到最长边是 100，另一边等比例缩放，值越小处理速度越快，但是精度会越低。
