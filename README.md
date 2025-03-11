@@ -1,6 +1,6 @@
 <p align="center">
   <a target="_blank" href="#">
-  <img alt="autohue" src="https://auto-plugin.github.io/index/dependens/ico.svg" width="300">
+  <img alt="autohue" src="./public/logo.svg" width="300">
   </a>
 </p>
 
