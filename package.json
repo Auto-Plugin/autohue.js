@@ -1,6 +1,6 @@
 {
   "name": "autohue.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个自动提取图片主题色让图片和背景融为一体的工具",
   "main": "./dist/autohue.cjs.js",
   "type": "module",
@@ -11,11 +11,11 @@
   },
   "files": [
     "dist/*",
-    "autohue.svg",
+    "./public/logo.svg",
     "LICENSE",
     "README.md"
   ],
-  "homepage": "https://auto-plugin.github.io/index/autohue.js/",
+  "homepage": "https://auto-plugin.github.io/autohue.js/",
   "scripts": {
     "dev": "rolldown -c ./rolldown.config.dev.ts --watch",
     "vnr": "vnr",
