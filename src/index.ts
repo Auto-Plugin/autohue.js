@@ -17,6 +17,8 @@ interface Cluster {
   averageLab: [number, number, number]
 }
 type thresholdObj = { primary?: number; left?: number; right?: number; top?: number; bottom?: number }
+type proxyUrl = (url: string) => string
+
 interface autoColorPickerOptions {
   /**
    * - 降采样后的最大尺寸（默认 100px）
@@ -32,6 +34,11 @@ interface autoColorPickerOptions {
    * - 传入 number | { primary?: number; left?: number; right?: number; top?: number; bottom?: number }
    **/
   threshold?: number | thresholdObj
+  /**
+   * - 代理图片 URL 的函数(它应该返回一个新的 URL，如：https://your-proxy.com?url=原始图片URL)
+   * - 用于解决跨域问题，默认不使用代理，不建议在生产环境中使用
+   */
+  proxyUrl?: proxyUrl
 }
 
 // 将 sRGB 转换为 Lab 色彩空间
@@ -83,7 +90,10 @@ function rgbToHex(rgb: [number, number, number]): string {
 }
 
 // 加载图片（支持传入 URL 或 HTMLImageElement）
-function loadImage(imageSource: HTMLImageElement | string): Promise<HTMLImageElement> {
+function loadImage(imageSource: HTMLImageElement | string, proxyUrl?: proxyUrl): Promise<HTMLImageElement> {
+  if (typeof imageSource === 'string' && proxyUrl) {
+    imageSource = proxyUrl(imageSource)
+  }
   return new Promise((resolve, reject) => {
     let img: HTMLImageElement
     if (typeof imageSource === 'string') {
@@ -191,13 +201,13 @@ function __handleAutoHueOptions(options?: autoColorPickerOptions) {
 }
 
 /**
- * 主函数：根据图片自动提取颜色
+ * 根据图片自动提取颜色(建议将结果缓存，避免重复计算)
  * @param imageSource 图片 URL 或 HTMLImageElement
  * @returns 返回包含主要颜色、次要颜色和背景色对象（上、右、下、左）的结果
  */
-export default async function colorPicker(imageSource: HTMLImageElement | string, options?: autoColorPickerOptions): Promise<AutoHueResult> {
+export default async function autohue(imageSource: HTMLImageElement | string, options?: autoColorPickerOptions): Promise<AutoHueResult> {
   const { maxSize, threshold } = __handleAutoHueOptions(options)
-  const img = await loadImage(imageSource)
+  const img = await loadImage(imageSource, options?.proxyUrl)
   // 降采样（最大尺寸 100px，可根据需求调整）
   const imageData = getImageDataFromImage(img, maxSize)
 
